@@ -31,5 +31,10 @@ li {
     width: 10px
 }
 .btn {
-    background-color: black
+    background-color: black;
+    
+}
+
+.spacer {
+    height: 20px
 }
