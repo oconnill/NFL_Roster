@@ -1,0 +1,35 @@
+.player-card{
+    display: inline;
+
+}
+
+
+.search-panel{
+    padding-bottom: 20px;
+    padding-top: 10px
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 10px
+}
+
+li {
+    text-align: left
+}
+
+.panel-player {
+    border: 1px solid;
+}
+
+.player-image img{
+    outline: black dotted 1px
+
+}
+
+.space-inline{
+    width: 10px
+}
+.btn {
+    background-color: black
+}

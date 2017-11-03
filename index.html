@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>My NFL Roster</h1>
+        <div class="panel panel-default">
+            <div class="panel-body search-panel">
+                <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
+                    <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="player" placeholder="Search Teams..." />
+                        <div class="space-inline"></div>
+                        <button type="submit" class="btn btn-primary btn-sm round" id="getPlayersByTeam-button"> Go</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body panel-player">
+                        <div class="player-roster">
+                            <div class="player-card">
+                                <div class="player-image text-center">
+                                    <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/">
+                                </div>
+                                <div class="player-info">
+                                    <ul>
+                                        <li>Name:</li>
+                                        <li>Positon:</li>
+                                        <li>Team</li>
+                                        <li>
+                                                <a href="#" class="btn btn-info btn-sm">
+                                                        <span class="glyphicon glyphicon-plus"></span>  
+                                                      </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-team"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
