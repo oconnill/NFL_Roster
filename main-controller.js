@@ -1,40 +1,54 @@
+
 function MainController() {
     var playersService = new PlayersService()
 
     this.add = function add(id) {
-        console.log(id)
         playersService.addToMyPlayers(id, updateMyChar)
     }
+
+    this.get
     
-
-    playersService.getPlayersByPosition(ready)
-    playersService.getPlayersByTeam(ready)
-
     function ready(data) {
 
         update(data)
     }
 
-    function update(list) {
+    function draw(playersData) {
         var elem = document.getElementById('player-list')
         elem.innerHTML = ''
         var template = ''
-        for (var i in list) {
-            var player = list[i];
+        for (var i = o; i < playersData.length; i++)
+        var player = playersData[i]
             template += `
-          <div class="card">
-            <h3>${player.name}</h3>
-            <img src='${player.name}'>
-            <div>
-              <button class="btn-success" id="${player.id}" onclick="app.controllers.mainController.add('${player.id}')">Add to Team</button>
-            </div>
-          <div>
+            <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body panel-player">
+                        <div class="player-roster">
+                            <div class="player-card">
+                                <div class="player-image text-center">
+                                    <img src="${player.photo}">
+                                </div>
+                                <div class="player-info">
+                                    <ul>
+                                        <li>Name:${player.firstname}</li>
+                                        <li>Positon:${player.position}</li>
+                                        <li>Team:${player.pro_team}</li>
+                                        <li>
+                                            <a href="#" class="btn btn-info btn-sm">
+                                                <span class="id="${player.id}" glyphicon glyphicon-plus" onclick="app.controllers.mainController.add('${player.id}')"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
           `
             elem.innerHTML = template
 
         }
 
-    }
+
 
     var loading = true;
 
@@ -43,8 +57,8 @@ function MainController() {
 
         //Now that all of our player data is back we can safely setup our bindings for the rest of the view.
 
-        $('some-button').on('click', function () {
-            var teamSF = playerService.getPlayersByTeam("SF");
+        $('.form-inline').on('submit', function () {
+            playerService.getPlayersBySomeValue('pro_team',"SF");
         })
 
     }
