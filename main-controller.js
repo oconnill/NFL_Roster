@@ -38,7 +38,7 @@ function MainController() {
             template += `
                             <div class="player-card">
                                 <div class="player-image text-center">
-                                    <img src="${player.photo}">
+                                    <img src="${player.photo}" alt=''>
                                 </div>
                                 <div class="player-info">
                                     <ul>
@@ -66,7 +66,7 @@ function MainController() {
             template += `
                             <div class="player-card">
                                 <div class="player-image text-center">
-                                    <img src="${player.photo}">
+                                    <img src="${player.photo}" alt="">
                                 </div>
                                 <div class="player-info">
                                     <ul>
