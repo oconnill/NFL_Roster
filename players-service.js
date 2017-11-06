@@ -1,16 +1,27 @@
 var PlayersService = function () {
     var endpointUri = "http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json"
     var playersData = []
-    var myPlayers = []
-    
+    var players = []
+    var Myplayers = []
 
-    this.getPlayersByTeam = function (teamName) {
+
+    this.getPlayersBySearch = function (input) {        
         return playersData.filter(function (player) {
-            if (player.team== teamName) {
-                return true;
-            } 
+            if (player.pro_team.toLowerCase() == input || player.firstname.toLowerCase() == input || player.position.toLowerCase() == input || player.lastname.toLowerCase() == input || player.fullname.toLowerCase() == input) {
+                if (player.jersey !== undefined) {
+                    if (player.photo !== "http://sports.cbsimg.net/images/players/unknown-player-170x170.png") {
+                        players.push(player);
+                    }
+                }
+            }
         });
-       
+    }
+
+
+
+    
+    this.getPlayers = function () {
+        return players
     }
 
 

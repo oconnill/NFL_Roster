@@ -1,24 +1,38 @@
 
 function MainController() {
-    var playersService = new PlayersService()
+    var loading = true;
+    var playersService = new PlayersService(ready)
+    
+    this.getPlayersBySearch = function getPlayersBySearch(e){
+        // debugger
+        e.preventDefault();
+        var team = e.target.team.value;
+        playersService.getPlayersBySearch(team)
+        updateRoster(playersService.getPlayers());
+      }
 
-    this.add = function add(id) {
-        playersService.addToMyPlayers(id, updateMyChar)
+
+
+
+
+    this.addPlayer = function addPlayer(i) {
+        playersService.addToMyPlayers()
     }
 
-    this.get
+
+    
     
     function ready(data) {
 
         update(data)
     }
 
-    function draw(playersData) {
-        var elem = document.getElementById('player-list')
+    function updateRoster(players) {
+        var elem = document.getElementById('player-roster')
         elem.innerHTML = ''
         var template = ''
-        for (var i = o; i < playersData.length; i++)
-        var player = playersData[i]
+        for (var i = 0; i < players.length; i++)
+        var player = players[i]
             template += `
             <div class="row">
             <div class="col-sm-4">
@@ -31,9 +45,9 @@ function MainController() {
                                 </div>
                                 <div class="player-info">
                                     <ul>
-                                        <li>Name:${player.firstname}</li>
-                                        <li>Positon:${player.position}</li>
-                                        <li>Team:${player.pro_team}</li>
+                                        <li>Name: ${player.firstname}</li>
+                                        <li>Positon: ${player.position}</li>
+                                        <li>Team: ${player.pro_team}</li>
                                         <li>
                                             <a href="#" class="btn btn-info btn-sm">
                                                 <span class="id="${player.id}" glyphicon glyphicon-plus" onclick="app.controllers.mainController.add('${player.id}')"></span>

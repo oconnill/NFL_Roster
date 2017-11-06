@@ -14,21 +14,22 @@
         <h1>My NFL Roster</h1>
         <div class="panel panel-default">
             <div class="panel-body search-panel">
-                <form class="form-inline" onsubmit="app.controllers.mainController.playersService">
+                <form class="form-inline" onsubmit=app.controllers.mainController.getPlayersBySearch(event)>
                     <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
                     <div class="form-group">
-                        <input type="text" class="form-control" name="player" placeholder="Search Teams..." />
-                        <div class="space-inline"></div>
-                        <button type="submit" class="btn btn-primary btn-sm round" id="getPlayersByTeam-button"> Go</button>
+                        
+                            <input type="text" class="form-control" name="team" placeholder="Artist Name" />
+                        
+                        <button type="submit" class="btn btn-primary btn-sm round" id="player-list"> Go</button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="row" id="player-roster">
+            <!-- <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-body panel-player">
-                        <div class="player-roster">
+                        <div id="player-roster">
                             <div class="player-card">
                                 <div class="player-image text-center">
                                     <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/">
@@ -50,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="spacer">
